@@ -1,0 +1,131 @@
+.post-detail {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  color: #333;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-title {
+  font-size: 2rem;
+  color: #222;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.favorite-button {
+  font-size: 2rem;
+  background-color: transparent;
+  color: #ff6347;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorite-button:hover {
+  transform: scale(1.2);
+}
+
+.post-metrics {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.views, .likes {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.post-body {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.post-tags {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tag {
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  gap: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #079cc1;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #0484a4;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .post-title {
+    font-size: 1.8rem;
+  }
+
+  .favorite-button {
+    font-size: 1.8rem;
+  }
+
+  .back-link {
+    
+    margin: 20px auto 0;
+    padding: 5px 10px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .post-title {
+    font-size: 1.6rem;
+  }
+
+  .favorite-button {
+    font-size: 1.6rem;
+  }
+
+  .back-link {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+}
+
+.favorited-post {
+  background: linear-gradient(135deg, #ffb3b3, #ffe6e6, #d1ffd6, #cce0ff);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}

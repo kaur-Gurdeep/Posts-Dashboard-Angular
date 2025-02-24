@@ -1,0 +1,14 @@
+<div *ngIf="posts$ | async as posts; else loading" class="posts-container">
+  <div *ngFor="let post of posts" class="post-card" [ngClass]="{'favorited-post': isFavorite(post.id)}">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body | slice: 0: 100 }}...</p>
+    <button (click)="toggleFavorite(post)" [class.favorited]="isFavorite(post.id)">
+      {{ isFavorite(post.id) ? "★" : "☆" }}
+    </button>
+    <a [routerLink]="['/post', post.id]">Read More</a>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading posts...</p>
+</ng-template>

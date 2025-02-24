@@ -1,0 +1,17 @@
+<div class="app-container">
+  <header>
+    <h1>{{ title }}</h1>
+    <nav>
+      <a [routerLink]="['/']" routerLinkActive="active">Home</a>
+      <a [routerLink]="['/favorites']" routerLinkActive="active">Favorites</a>
+    </nav>
+  </header>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <p>Created by Gurdeep Kaur</p>
+  </footer>
+</div>

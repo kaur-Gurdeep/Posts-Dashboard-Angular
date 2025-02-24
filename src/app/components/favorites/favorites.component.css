@@ -1,0 +1,60 @@
+.favorites-container {
+  padding: 20px;
+}
+
+.favorite-card {
+  background: linear-gradient(135deg, #d1ffd6, #e7bebe, #ffe6e6, #cce0ff);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.favorite-card h3 {
+  font-size: 1.3rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.favorite-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.star-icon {
+  font-size: 1.8rem;
+  color: #ff6347;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.star-icon:hover {
+  transform: scale(1.2);
+}
+
+.read-more-link {
+  color: #c03503;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #ff4500;
+  text-decoration: underline;
+}
+
+ng-template {
+  text-align: center;
+  font-size: 1.2rem;
+  color: black;
+}

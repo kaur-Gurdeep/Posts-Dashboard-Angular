@@ -1,0 +1,91 @@
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.post-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  background: linear-gradient(135deg, #ffb3b3, #ffe6e6, #d1ffd6, #cce0ff);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+.post-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.post-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #ff6347;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+button.favorited {
+  color: #ff4500;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: #c03503;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff4500;
+  text-decoration: underline;
+}
+
+.favorited-post {
+  background: linear-gradient(135deg, #ffb3b3, #ffe6e6, #d1ffd6, #cce0ff);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .posts-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .posts-container {
+    grid-template-columns: 1fr; 
+  }
+}

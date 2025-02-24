@@ -1,0 +1,166 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #d4d4d4;
+  border: 10px solid transparent;
+  border-image: linear-gradient(
+    to right,
+    #ff6347,
+    #ff1493,
+    #32cd32,
+    #1e90ff,
+    #ff6347
+  ) 1;
+}
+
+header {
+  background-color: black;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-size: 1.2rem;
+}
+
+header nav a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #ff6347, #ff1493, #32cd32, #1e90ff, #ff6347);
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+header nav a:hover::after {
+  transform: scaleX(1);
+}
+
+main {
+  margin-top: 30px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-spinner::after {
+  content: "";
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header nav {
+    flex-direction: row; 
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%; 
+  }
+
+  header nav a {
+    margin: 0 10px; 
+    font-size: 1.1rem;
+  }
+
+  footer p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header nav a {
+    font-size: 1rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  .loading-spinner::after {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="favorites-container">
+  <div *ngIf="favorites.length > 0; else noFavorites">
+    <div *ngFor="let post of favorites">
+      <div class="favorite-card">
+        <div class="title-container">
+          <h3>{{ post.title }}</h3>
+          <span 
+            class="star-icon" 
+            (click)="removeFromFavorites(post.id)" 
+            title="Remove from Favorites">
+            ★
+          </span>
+        </div>
+        <p>{{ post.body | slice : 0 : 100 }}...</p>
+        <a [routerLink]="['/post', post.id]" class="read-more-link">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noFavorites>
+  <p>No favorites yet</p>
+</ng-template>
