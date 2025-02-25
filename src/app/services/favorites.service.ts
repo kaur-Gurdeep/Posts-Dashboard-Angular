@@ -8,8 +8,8 @@ export class FavoritesService {
   private favorites: Post[] = [];
 
   constructor() {
-    this.loadFavorites(); // Load favorites from localStorage when service initializes
-  }
+    this.loadFavorites(); 
+    }
 
   private saveFavorites(): void {
     localStorage.setItem('favorites', JSON.stringify(this.favorites));
