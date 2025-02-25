@@ -89,3 +89,20 @@ a:hover {
     grid-template-columns: 1fr; 
   }
 }
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;  
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.loading-text {
+  margin-top: 15px;
+  color: rgb(201, 6, 6);
+  font-size: 1.2rem;
+  font-weight: 500;
+}

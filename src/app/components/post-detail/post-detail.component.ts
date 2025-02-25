@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { PostsService } from '../../services/posts.service';
 import { FavoritesService } from '../../services/favorites.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Post } from '../../models/posts.interface';
 import { CommonModule } from '@angular/common';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-post-detail',
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./post-detail.component.css'],
 })
 export class PostDetailComponent {
-  post$: Observable<Post>;
+  post$: Observable<Post | null>;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +23,11 @@ export class PostDetailComponent {
     private favoritesService: FavoritesService
   ) {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.post$ = this.postsService.getPostById(id);
+    this.post$ = this.postsService.getPostById(id).pipe(
+      catchError(() => {
+        return of(null);
+      })
+    );
   }
 
   toggleFavorite(post: Post): void {

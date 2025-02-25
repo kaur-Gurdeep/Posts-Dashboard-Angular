@@ -1,4 +1,4 @@
-<div *ngIf="post$ | async as post" class="post-detail" [ngClass]="{'favorited-post': isFavorite(post.id)}">
+<div *ngIf="post$ | async as post; else notFound" class="post-detail" [ngClass]="{'favorited-post': isFavorite(post.id)}">
   <div class="post-header">
     <h1 class="post-title">{{ post.title }}</h1>
     <button (click)="toggleFavorite(post)" class="favorite-button">
@@ -9,7 +9,7 @@
     <span class="views"><strong>Views:</strong> {{ post.views }}</span>
     <span class="likes"><strong>Likes:</strong> {{ post.reactions.likes }}</span>
   </div>
-  <p class="post-body">{{ post.body }}</p> 
+  <p class="post-body">{{ post.body }}</p>
   <div class="post-tags">
     <span *ngFor="let tag of post.tags" class="tag">{{ tag }}</span>
   </div>
@@ -17,3 +17,12 @@
     <a routerLink="/" class="back-link">Back to Posts</a>
   </div>
 </div>
+
+<ng-template #notFound>
+  <div class="not-found">
+    <h2>Post Not Found</h2>
+    <p>The post you are looking for does not exist.</p>
+    <a routerLink="/" class="back-link">Go Back to Posts</a>
+  </div>
+</ng-template>
+

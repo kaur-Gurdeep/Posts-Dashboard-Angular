@@ -7,6 +7,21 @@ import { Post } from '../models/posts.interface';
 export class FavoritesService {
   private favorites: Post[] = [];
 
+  constructor() {
+    this.loadFavorites(); // Load favorites from localStorage when service initializes
+  }
+
+  private saveFavorites(): void {
+    localStorage.setItem('favorites', JSON.stringify(this.favorites));
+  }
+
+  private loadFavorites(): void {
+    const storedFavorites = localStorage.getItem('favorites');
+    if (storedFavorites) {
+      this.favorites = JSON.parse(storedFavorites);
+    }
+  }
+
   getFavorites(): Post[] {
     return this.favorites;
   }
@@ -14,11 +29,13 @@ export class FavoritesService {
   addToFavorites(post: Post): void {
     if (!this.isFavorite(post.id)) {
       this.favorites.push(post);
+      this.saveFavorites(); 
     }
   }
 
   removeFromFavorites(postId: number): void {
     this.favorites = this.favorites.filter(p => p.id !== postId);
+    this.saveFavorites(); 
   }
 
   isFavorite(postId: number): boolean {
